@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/data/db
+
+  api:
+    build: .
+    ports:
+      - "19020:19020"
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/leituras
+    depends_on:
+      - mongodb
+
+  db-seed:
+    image: mongo:latest
+    volumes:
+      - ./livros.json:/livros.json
+    command: >
+      mongoimport --host mongodb --db leituras --collection livros --type json --file /livros.json --jsonArray
+    depends_on:
+      - mongodb
+
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "19021:80"
+    volumes:
+      - ../index.html:/usr/share/nginx/html/index.html
+      - ../index_files:/usr/share/nginx/html/index_files
+
+volumes:
+  mongodb_data:

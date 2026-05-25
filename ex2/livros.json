@@ -1,0 +1,50 @@
+[
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c1" },
+    "titulo": "O Alquimista",
+    "autor": "Paulo Coelho",
+    "paginas": 208,
+    "genero": "Ficção",
+    "lido": true
+  },
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c2" },
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "paginas": 328,
+    "genero": "Distopia",
+    "lido": false
+  },
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c3" },
+    "titulo": "O Principezinho",
+    "autor": "Antoine de Saint-Exupéry",
+    "paginas": 96,
+    "genero": "Infantil",
+    "lido": true
+  },
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c4" },
+    "titulo": "Dom Quixote",
+    "autor": "Miguel de Cervantes",
+    "paginas": 863,
+    "genero": "Clássico",
+    "lido": false
+  },
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c5" },
+    "titulo": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "paginas": 417,
+    "genero": "Realismo Mágico",
+    "lido": false
+  },
+  {
+    "_id": { "$oid": "6a14159903534416fc8d23c6" },
+    "titulo": "Ensaio sobre a Cegueira",
+    "autor": "José Saramago",
+    "paginas": 310,
+    "genero": "Ficção",
+    "lido": true
+  }
+]

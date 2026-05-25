@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  api:
+    build: .
+    ports:
+      - "17000:17000"
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/jogostabuleiro
+    depends_on:
+      - mongodb
+
+  db-seed:
+    image: mongo:latest
+    volumes:
+      - ./jogos.json:/jogos.json
+    command: >
+      mongoimport --host mongodb --db jogostabuleiro --collection jogos --type json --file /jogos.json --jsonArray
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:
